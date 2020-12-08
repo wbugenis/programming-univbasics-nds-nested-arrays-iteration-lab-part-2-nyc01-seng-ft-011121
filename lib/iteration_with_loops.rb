@@ -3,6 +3,13 @@ def find_min_in_nested_arrays(src)
   # Produce a new Array that contains the smallest number of each of the nested arrays
   smallest = []
   src.length.times do |count|
-    src[count].length.times do |inner_count}
-      
+    small = src[count][0]
+    src[count].length.times do |inner_count|
+      if small > src[count][inner_count]
+        small = src[inner_count]
+      end
+    end
+    smallest << small
+  end
+  smallest
 end
